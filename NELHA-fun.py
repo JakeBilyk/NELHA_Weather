@@ -65,6 +65,9 @@ root.configure(background=Symbrosia_colors['blue'])
 # Create a style to customize the appearance of the treeview
 style = ttk.Style(root)
 style.configure("Treeview", background=Symbrosia_colors['blue'], fieldbackground=Symbrosia_colors['red'], foreground='white')
+# Set font size for the treeview
+style.configure("Treeview.Heading", font=('Helvetica', 14))
+style.configure("Treeview", font=('Helvetica', 14))
 
 # Create a treeview with columns for parameter, value, and units
 tree = ttk.Treeview(root, columns=('Parameter', 'Value', 'Units'), show='headings')
@@ -74,11 +77,11 @@ tree.heading('Units', text='Units')
 tree.pack()
 
 # Add some feedback to the user
-lbl_status = tk.Label(root, text="", fg=Symbrosia_colors['red'], font=('Helvetica', 12, 'bold'))
+lbl_status = tk.Label(root, text="", fg=Symbrosia_colors['red'], font=('Helvetica', 14, 'bold'))
 lbl_status.pack()
 
 # Fetch data button
-btn_fetch_data = tk.Button(root, text="Fetch Weather Data", command=fetch_weather_data, bg=Symbrosia_colors['yellow'], fg='black', activebackground=Symbrosia_colors['yellow'], activeforeground='black', font=('Helvetica', 12, 'bold'))
+btn_fetch_data = tk.Button(root, text="Fetch Weather Data", command=fetch_weather_data, bg=Symbrosia_colors['yellow'], fg='black', activebackground=Symbrosia_colors['yellow'], activeforeground='black', font=('Helvetica', 14, 'bold'))
 btn_fetch_data.pack()
 
 root.mainloop()
